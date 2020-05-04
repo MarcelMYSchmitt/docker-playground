@@ -1,0 +1,29 @@
+version: "3.2"
+
+services:
+  prometheus:
+    image: playground-prometheus
+    container_name: monitoring-prometheus
+    build:
+      context: Prometheus
+      dockerfile: Dockerfile
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+
+  grafana:
+    image: playground-grafana
+    container_name: monitoring-grafana
+    build:
+      context: Grafana
+      dockerfile: Dockerfile
+    environment:
+      PrometheusUrl: ${PROMETHEUS_URL}
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: playground-network

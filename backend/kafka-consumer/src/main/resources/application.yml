@@ -1,0 +1,14 @@
+server: 
+  port: 8080
+
+kafka:
+  bootstrap-servers: localhost:9092
+  topic:
+    monitoring: watchdog
+    playapp: frontend
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"    

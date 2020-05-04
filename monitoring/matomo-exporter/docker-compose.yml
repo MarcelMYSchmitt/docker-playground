@@ -1,0 +1,23 @@
+version: "3.2"
+
+services:
+
+  matomo-exporter:
+    image: matomo-exporter
+    build:
+        context: .
+        dockerfile: Dockerfile
+    container_name: matomo-exporter
+    restart: always
+    ports:
+      - 8180:8080
+    environment: 
+      - matomoBaseUrl=http://web:80
+      - matomoTrackerApiEndpoint=/piwik.php
+      - matomoReportingApiEndpoint=/index.php?module=API&method=API.getPiwikVersion&token_auth=
+      - matomoReportingApiAuthToken=e2e93310eecabd85150f1502e2ef0f96
+    
+networks:
+  default:
+    external:
+      name: playground-network

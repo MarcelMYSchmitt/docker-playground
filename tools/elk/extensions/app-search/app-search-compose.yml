@@ -1,0 +1,23 @@
+version: '3.2'
+
+services:
+  app-search:
+    build:
+      context: extensions/app-search/
+    volumes:
+      - type: bind
+        source: ./extensions/app-search/config/app-search.yml
+        target: /usr/share/app-search/config/app-search.yml
+        read_only: true
+    environment:
+      JAVA_OPTS: -Xmx2g -Xms2g
+      APP_SEARCH_DEFAULT_PASSWORD: changeme
+    ports:
+      - '3002:3002'
+    depends_on:
+      - elasticsearch
+
+networks:
+  default:
+    external:
+      name: playground-network                        

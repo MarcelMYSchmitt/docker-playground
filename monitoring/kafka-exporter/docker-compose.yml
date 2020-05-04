@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  kafka-exporter:
+    image: danielqsj/kafka-exporter
+    container_name: kafka-exporter
+    restart: always
+    command:
+      - "--kafka.server=kafka:9092"       
+    ports:
+      - 9308:9308
+
+
+networks:
+  default:
+    external:
+      name: playground-network

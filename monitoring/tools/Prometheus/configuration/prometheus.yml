@@ -1,0 +1,39 @@
+# prometheus.yml
+global:
+    scrape_interval: 10s
+scrape_configs:
+  - job_name: Prometheus
+    static_configs:
+      - targets: ['prometheus:9090']  
+  - job_name: KibanaExporter
+    static_configs:
+      - targets: ['kibana:5601']
+    metrics_path: /_prometheus/metrics
+    basic_auth:
+      username: elastic
+      password: changeme
+  - job_name: ElasticSearchExporter
+    static_configs:
+      - targets: ['elasticsearch_exporter:9114']
+  - job_name: LogstashExporter
+    static_configs:
+      - targets: ['logstash_exporter:9304']
+  - job_name: MatomoExporter
+    static_configs:
+      - targets: ['matomo-exporter:8080']
+    metrics_path: /actuator/prometheus
+  - job_name: KafkaExporter
+    static_configs:
+      - targets: ['kafka-exporter:9308']
+  - job_name: KafkaProducer
+    static_configs:
+      - targets: ['kafka-producer:8080']
+    metrics_path: /actuator/prometheus            
+  - job_name: KafkaConsumer
+    static_configs:
+      - targets: ['kafka-consumer:8080']
+    metrics_path: /actuator/prometheus
+  - job_name: Playappfrontend
+    static_configs:
+      - targets: ['playapp:9145']
+

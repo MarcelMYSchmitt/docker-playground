@@ -1,0 +1,24 @@
+version: "3.2"
+
+services:
+  elasticsearch_exporter:
+    image: justwatch/elasticsearch_exporter:1.1.0
+    container_name: elasticsearch_exporter
+    command:
+     - '--es.uri=http://elastic:changeme@elasticsearch:9200'
+    restart: always
+    ports:
+    - 9114:9114
+
+  logstash_exporter:
+    image: alxrem/prometheus-logstash-exporter
+    container_name: logstash_exporter
+    command: ["-logstash.host", "logstash"]    
+    restart: always
+    ports:
+    - 9304:9304
+
+networks:
+  default:
+    external:
+      name: playground-network                  

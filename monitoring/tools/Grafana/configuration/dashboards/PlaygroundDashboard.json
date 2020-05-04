@@ -1,0 +1,1933 @@
+{
+    "annotations": {
+        "list": [{
+            "builtIn": 1,
+            "datasource": "-- Grafana --",
+            "enable": true,
+            "hide": true,
+            "iconColor": "rgba(0, 211, 255, 1)",
+            "name": "Annotations & Alerts",
+            "type": "dashboard"
+        }]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1,
+    "links": [],
+    "panels": [{
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 11,
+            "panels": [],
+            "title": "Tools",
+            "type": "row"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorPostfix": false,
+            "colorPrefix": false,
+            "colorValue": true,
+            "colors": [
+                "#d44a3a",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of Kafka. ",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 0,
+                "y": 1
+            },
+            "id": 22,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "kafka_brokers{instance=\"kafka-exporter:9308\",job=\"KafkaExporter\"}  ",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Kafka",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorPostfix": false,
+            "colorPrefix": false,
+            "colorValue": true,
+            "colors": [
+                "#C4162A",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of Kibana. ",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 4,
+                "y": 1
+            },
+            "id": 19,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "kibana_status{instance=\"kibana:5601\",job=\"KibanaExporter\"} ",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Kibana",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                },
+                {
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorPostfix": false,
+            "colorPrefix": false,
+            "colorValue": true,
+            "colors": [
+                "#C4162A",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of Elastic Search. ",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 8,
+                "y": 1
+            },
+            "id": 15,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "elasticsearch_cluster_health_up{instance=\"elasticsearch_exporter:9114\",job=\"ElasticSearchExporter\"} ",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Elastic Search",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorPostfix": false,
+            "colorPrefix": false,
+            "colorValue": true,
+            "colors": [
+                "#C4162A",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of Logstash. ",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 12,
+                "y": 1
+            },
+            "id": 13,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "logstash_up{instance=\"logstash_exporter:9304\",job=\"LogstashExporter\"}\t",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Logstash",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorValue": true,
+            "colors": [
+                "#C4162A",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of Matomo Reporting API Endpoint.",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 16,
+                "y": 1
+            },
+            "id": 12,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "matomo_reporting_api_availability_up{instance=\"matomo-exporter:8080\",job=\"MatomoExporter\"}\t",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Matomo Reporting API",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorValue": true,
+            "colors": [
+                "#C4162A",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of Matomo Tracker API Endpoint.",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 20,
+                "y": 1
+            },
+            "id": 7,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "matomo_tracker_api_availability_up{instance=\"matomo-exporter:8080\",job=\"MatomoExporter\"}",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Matomo Tracker API",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorPostfix": false,
+            "colorPrefix": false,
+            "colorValue": true,
+            "colors": [
+                "#C4162A",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of Kafka Exporter. ",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 0,
+                "y": 5
+            },
+            "id": 21,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "up{instance=\"kafka-exporter:9308\",job=\"KafkaExporter\"}\t",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Kafka Exporter",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorPostfix": false,
+            "colorPrefix": false,
+            "colorValue": true,
+            "colors": [
+                "#C4162A",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of Kibana Exporter. ",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 4,
+                "y": 5
+            },
+            "id": 20,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "up{instance=\"kibana:5601\",job=\"KibanaExporter\"}\t",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Kibana  Exporter",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorPostfix": false,
+            "colorPrefix": false,
+            "colorValue": true,
+            "colors": [
+                "#d44a3a",
+                "rgba(237, 129, 40, 0.89)",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of Elastic Search Exporter. ",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 8,
+                "y": 5
+            },
+            "id": 16,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "up{instance=\"elasticsearch_exporter:9114\",job=\"ElasticSearchExporter\"}\t",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Elastic Search Exporter",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorPostfix": false,
+            "colorPrefix": false,
+            "colorValue": true,
+            "colors": [
+                "#d44a3a",
+                "rgba(237, 129, 40, 0.89)",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of Logstash Exporter. ",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 12,
+                "y": 5
+            },
+            "id": 14,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "up{instance=\"logstash_exporter:9304\",job=\"LogstashExporter\"}\t",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Logstash Exporter",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorValue": true,
+            "colors": [
+                "#C4162A",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of Matomo Exporter.",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 8,
+                "x": 16,
+                "y": 5
+            },
+            "id": 6,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "up{instance=\"matomo-exporter:8080\",job=\"MatomoExporter\"}\t",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Matomo Exporter",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 9
+            },
+            "id": 9,
+            "panels": [],
+            "title": "Application",
+            "type": "row"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorValue": true,
+            "colors": [
+                "#C4162A",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of the Kafka Producer. ",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 0,
+                "y": 10
+            },
+            "id": 29,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "up{instance=\"kafka-producer:8080\",job=\"KafkaProducer\"}\t",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Producer",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorValue": true,
+            "colors": [
+                "#C4162A",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of the NGINX Container for Angular Frontend. ",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 4,
+                "y": 10
+            },
+            "id": 3,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "up{instance=\"playapp:9145\",job=\"Playappfrontend\"}",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Frontend",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "Prometheus",
+            "decimals": 1,
+            "description": "Overview of status for all services used by our application.",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 16,
+                "x": 8,
+                "y": 10
+            },
+            "hiddenSeries": false,
+            "id": 34,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "dataLinks": []
+            },
+            "percentage": false,
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [{
+                    "expr": "up{instance=\"kafka-producer:8080\",job=\"KafkaProducer\"}\t",
+                    "interval": "",
+                    "legendFormat": "Kafka-Producer",
+                    "refId": "A"
+                },
+                {
+                    "expr": "up{instance=\"kafka-consumer:8080\",job=\"KafkaConsumer\"}\t",
+                    "interval": "",
+                    "legendFormat": "Kafka-Consumer",
+                    "refId": "B"
+                },
+                {
+                    "expr": "up{instance=\"playapp:9145\",job=\"Playappfrontend\"}",
+                    "interval": "",
+                    "legendFormat": "Frontend",
+                    "refId": "C"
+                },
+                {
+                    "expr": "watchdog_availability_up{instance=\"kafka-consumer:8080\",job=\"KafkaConsumer\"}\t",
+                    "interval": "",
+                    "legendFormat": "Watchdog",
+                    "refId": "D"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Status of all application services",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [{
+                    "decimals": 1,
+                    "format": "percentunit",
+                    "label": null,
+                    "logBase": 1,
+                    "max": "1",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorValue": true,
+            "colors": [
+                "#C4162A",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of the Kafka Consumer. ",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 0,
+                "y": 14
+            },
+            "id": 30,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "up{instance=\"kafka-consumer:8080\",job=\"KafkaConsumer\"}\t",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Consumer",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "cacheTimeout": null,
+            "colorBackground": false,
+            "colorValue": true,
+            "colors": [
+                "#C4162A",
+                "#C4162A",
+                "#299c46"
+            ],
+            "datasource": "Prometheus",
+            "description": "Current status of the Watchdog. Watchdog investigates performance and error status. ",
+            "format": "none",
+            "gauge": {
+                "maxValue": 100,
+                "minValue": 0,
+                "show": false,
+                "thresholdLabels": false,
+                "thresholdMarkers": true
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 4,
+                "y": 14
+            },
+            "id": 35,
+            "interval": null,
+            "links": [],
+            "mappingType": 1,
+            "mappingTypes": [{
+                    "name": "value to text",
+                    "value": 1
+                },
+                {
+                    "name": "range to text",
+                    "value": 2
+                }
+            ],
+            "maxDataPoints": 100,
+            "nullPointMode": "connected",
+            "nullText": null,
+            "pluginVersion": "6.7.2",
+            "postfix": "",
+            "postfixFontSize": "50%",
+            "prefix": "",
+            "prefixFontSize": "50%",
+            "rangeMaps": [{
+                "from": "null",
+                "text": "N/A",
+                "to": "null"
+            }],
+            "sparkline": {
+                "fillColor": "rgba(31, 118, 189, 0.18)",
+                "full": false,
+                "lineColor": "rgb(31, 120, 193)",
+                "show": false,
+                "ymax": null,
+                "ymin": null
+            },
+            "tableColumn": "",
+            "targets": [{
+                "expr": "watchdog_availability_up{instance=\"kafka-consumer:8080\",job=\"KafkaConsumer\"}\t",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": "0,1",
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Watchdog",
+            "type": "singlestat",
+            "valueFontSize": "150%",
+            "valueMaps": [{
+                    "op": "=",
+                    "text": "N/A",
+                    "value": "null"
+                },
+                {
+                    "op": "=",
+                    "text": "ERROR",
+                    "value": "0"
+                },
+                {
+                    "op": "=",
+                    "text": "OK",
+                    "value": "1"
+                }
+            ],
+            "valueName": "avg"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "Prometheus",
+            "description": "Overview of sent messages by Kafka Producer during runtime.",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 18
+            },
+            "hiddenSeries": false,
+            "id": 32,
+            "legend": {
+                "alignAsTable": false,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "dataLinks": []
+            },
+            "percentage": false,
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [{
+                    "expr": "sum(producer_message_playapp_counter_total{instance=\"kafka-producer:8080\",job=\"KafkaProducer\"}) + sum(producer_message_monitoring_counter_total{instance=\"kafka-producer:8080\",job=\"KafkaProducer\"})",
+                    "interval": "",
+                    "legendFormat": "Total amount of messages",
+                    "refId": "A"
+                },
+                {
+                    "expr": "producer_message_playapp_counter_total{instance=\"kafka-producer:8080\",job=\"KafkaProducer\"}",
+                    "interval": "",
+                    "legendFormat": "Messages sent for Websockets",
+                    "refId": "B"
+                },
+                {
+                    "expr": "producer_message_monitoring_counter_total{instance=\"kafka-producer:8080\",job=\"KafkaProducer\"}",
+                    "interval": "",
+                    "legendFormat": "Messages sent for Watchdog",
+                    "refId": "C"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Kafka Producer Message Counter",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [{
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "Prometheus",
+            "description": "Overview of consumed messages by Kafka Consumer during runtime.",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 18
+            },
+            "hiddenSeries": false,
+            "id": 33,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "dataLinks": []
+            },
+            "percentage": false,
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [{
+                    "expr": "sum(producer_message_playapp_counter_total{instance=\"kafka-producer:8080\",job=\"KafkaProducer\"}) + sum(consumer_message_monitoring_counter_total{instance=\"kafka-consumer:8080\",job=\"KafkaConsumer\"}\t)",
+                    "interval": "",
+                    "legendFormat": "Total amount of messages",
+                    "refId": "A"
+                },
+                {
+                    "expr": "consumer_message_playapp_counter_total{instance=\"kafka-consumer:8080\",job=\"KafkaConsumer\"}\t",
+                    "interval": "",
+                    "legendFormat": "Messages consumed for Websockets",
+                    "refId": "B"
+                },
+                {
+                    "expr": "consumer_message_monitoring_counter_total{instance=\"kafka-consumer:8080\",job=\"KafkaConsumer\"}\t",
+                    "interval": "",
+                    "legendFormat": "Messages consumed for Watchdog",
+                    "refId": "C"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Kafka Consumer Message Counter",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [{
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "Prometheus",
+            "description": "Overview of 40X responses of Angular frontend",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 26
+            },
+            "hiddenSeries": false,
+            "id": 36,
+            "legend": {
+                "alignAsTable": false,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "dataLinks": []
+            },
+            "percentage": false,
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [{
+                "expr": "nginx_http_requests_total{host=\"playapp\",instance=\"playapp:9145\",job=\"Playappfrontend\",status=~\"40*\"}\t",
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Frontend HTTP 40X Responses",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [{
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "Prometheus",
+            "description": "Overview of 50X responses of Angular frontend",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 26
+            },
+            "hiddenSeries": false,
+            "id": 37,
+            "legend": {
+                "alignAsTable": false,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "dataLinks": []
+            },
+            "percentage": false,
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [{
+                "expr": "nginx_http_requests_total{host=\"playapp\",instance=\"playapp:9145\",job=\"Playappfrontend\",status=~\"50*\"}\t",
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+            }],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Frontend HTTP 50X Responses",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [{
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 22,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-30m",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Playground Dashboard",
+    "uid": "play-dash",
+    "variables": {
+        "list": []
+    },
+    "version": 1
+}

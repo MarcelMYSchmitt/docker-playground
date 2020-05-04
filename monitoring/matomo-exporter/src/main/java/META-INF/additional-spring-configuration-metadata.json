@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "matomoReportingApiAuthToken",
+    "type": "java.lang.String",
+    "description": "Authentication Token for accessing Reporting API of Matomo.'"
+  },
+  {
+    "name": "matomoTrackerApiEndpoint",
+    "type": "java.lang.String",
+    "description": "Tracker API Endpoint for general availability.'"
+  },
+  {
+    "name": "matomoReportingApiEndpoint",
+    "type": "java.lang.String",
+    "description": "Reporting API Endpoint with Authentication Token.'"
+  },
+  {
+    "name": "matomoBaseUrl",
+    "type": "java.lang.String",
+    "description": "Matomo Url set from the outside. Should be different from stage to stage.'"
+  }
+]}
