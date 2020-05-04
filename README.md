@@ -12,15 +12,21 @@ This repository contains:
 This repository is just a simple playground for showing the functionalities of different services....these are not production ready. 
 All services are dockerized and can be controlled by different docker compose files. 
 
+---
 
-## How tu run
+## How to run
 
 All services are using docker-compose files. There are also only Dockerfiles available. You can find a specific compose file in every folder.
 
+Start using a service by `docker-compose up`. With `-d` you can start it in detached mode. If you change something in code you have to rebuild the specific container by using `--build` in your compose command. 
 
-### General:  
+Info:  
+In all docker-compose files we are exposing our ports to access them from localhost. This is just for development purposes. Normally you do not want this for all services.
+For our monitoring we are using the docker network and docker service name functionality for scraping metrics.  
+We can access the metrics of our kafka-consumer (written in Java) by using the http:localhost:8380/actuator/metrics endpoint for example.
 
-Start using a service by `docker-compose up`. With `-d` you can start it in detached mode. 
+
+Services and Endpoints:
 
  - Matomo  
    After starting Matomo will be available under: http://localhost:7000/index.php
@@ -62,12 +68,10 @@ Start using a service by `docker-compose up`. With `-d` you can start it in deta
  - Grafana  
    After starting Grafana will be available under: http://localhost:3000
 
-Info:  
-In all docker-compose files we are exposing our ports to access them from localhost. This is just for development purposes. Normally you do not want this for all services.
-For our monitoring services we could use the docker network and docker service name functionality. 
 
-# TO DO
+---
+
+
+## TO DO
 
 Extend Readme and setup.
-Extend architecture diagram. 
-

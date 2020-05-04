@@ -19,6 +19,7 @@ import { throwError, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
 import { WebsocketsComponent } from './websockets/websockets.component';
+import { BackendComponent } from './backend/backend.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { WebsocketsComponent } from './websockets/websockets.component';
     MatomoComponent,
     LandingpageComponent,
     ElkComponent,
-    WebsocketsComponent
+    WebsocketsComponent,
+    BackendComponent
   ],
   imports: [
     BrowserModule,

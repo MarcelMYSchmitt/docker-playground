@@ -1,0 +1,21 @@
+<h2> This is the Backend Page!</h2>
+
+<div class="div-center">
+    <p>
+        Click on the button below for retrieving data from the kafka-consumer backend. <br /> Data will be coming from Redis database.
+        <br/> Go back to <a routerLink="/" title="Landing Page">Landing page</a>.
+    </p>
+</div>
+
+<div class="div-center">
+    <div class="div-center">
+        <button (click)="getData()">Get data from Redis.</button>
+    </div>
+</div>
+
+
+<div class="div-center">
+    <p>
+        {{ data }}
+    </p>
+</div>
