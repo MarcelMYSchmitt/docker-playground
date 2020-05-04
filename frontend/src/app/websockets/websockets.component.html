@@ -1,0 +1,35 @@
+<h2> This is the Websockets Page!</h2>
+
+<div class="div-center">
+    <p>
+        You can see the output of the websocket connection from kafka-consumer below. <br />
+        Go back to <a routerLink="/" title="Landing Page">Landing page</a>.
+    </p>
+
+    <br />
+
+    <div>
+        <h3>Raw Message</h3>
+        <span>{{rawMessage || "Should not be empty."}}</span>
+    </div>
+
+    <br />
+
+    <div>
+        <h3>Message Content</h3>
+        <table style="margin: 0 auto;">
+            <tr>
+                <td>Random Id:</td>
+                <td>{{messageRandomId || "Should not be empty."}}</td>
+            </tr>
+            <tr>
+                <td>Message:</td>
+                <td>{{messageMessage || "Should not be empty."}}</td>
+            </tr>
+            <tr>
+                <td>Timestamp:</td>
+                <td>{{messageTimestamp || "Should not be empty."}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

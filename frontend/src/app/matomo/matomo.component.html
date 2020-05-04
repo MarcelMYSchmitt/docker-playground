@@ -1,0 +1,25 @@
+
+<h2> This is the Matomo Page!</h2>
+
+<div class="div-center">
+  <p>
+    Click on the buttons below for sending different track events to Matomo. <br/>
+    Go back to <a routerLink="/" title="Landing Page">Landing page</a>.
+  </p>  
+</div>
+
+<div>
+    <div class="div-inline">
+      <h2> Left</h2>
+      <div class="div-center">
+          <button (click)="whatHappensOnClickLeft(1)">Left Event.</button>   
+      </div>
+    </div>
+
+    <div class="div-inline">
+      <h2> Right</h2>
+      <div class="div-center">
+        <button (click)="whatHappensOnClickRight(2)">Right Event.</button>
+      </div>
+    </div>
+  </div>

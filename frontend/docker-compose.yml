@@ -1,0 +1,19 @@
+version: "3.2"
+
+services:
+   
+  playapp:
+    image: playapp-frontend
+    container_name: playapp-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3100:80"
+      - "3145:9145"
+    restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: playground-network    
