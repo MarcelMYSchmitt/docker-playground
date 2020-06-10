@@ -1,0 +1,33 @@
+groups:
+- name: status_metrics
+  rules:
+  - alert: KafkaDown
+    expr: kafka_brokers == 0 
+    for: 30s
+    labels:
+      severity: critical
+      application:  kafka
+      environment: production
+    annotations:
+      summary: "Kafka seems to be down!"
+      description: "The metric status for kafka shows an error status. Please take a look."
+  - alert: KafkaProducerDown
+    expr: up{instance="kafka-producer:8080",job="KafkaProducer"} == 0
+    for: 30s
+    labels:
+      severity: critical
+      application: kafka-producer
+      environment: production
+    annotations:
+      summary: "Kafka Producer seems to be down!"
+      description: "Kafka Producer is not running anymore. Please take a deeper look. No messages will be sent anymore."
+  - alert: DummyTestAlert
+    expr: up{instance="prometheus:9090",job="Prometheus"} == 1
+    for: 30s
+    labels:
+      severity: critical
+      application: alertmanager
+      environment: production
+    annotations:
+      summary: "Prometheus Test Alert!"
+      description: "This alert makes no sense. Firing for status 1...just for testing the connection between Prometheus and AlertManager"

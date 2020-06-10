@@ -37,3 +37,15 @@ scrape_configs:
     static_configs:
       - targets: ['playapp:9145']
 
+
+
+## alerting section 
+
+rule_files:
+  - "prometheus.rules.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+      - targets: 
+        - 'alertmanager:9093'

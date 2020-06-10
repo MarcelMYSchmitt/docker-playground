@@ -6,7 +6,7 @@ This repository contains:
  - Kafka as Message Broker
  - Kafka Producer and Consumer (both in Java)
  - Frontend (Angular) for displaying Kafka data, also for sending data to ELK and Matomo  
- - Monitoring tools (Prometheus, Grafana)
+ - Monitoring tools (Prometheus, Prometheus AlertManager, Grafana)
  - Monitoring Exporter (Kafka, Matomo, ELK)
 
 This repository is just a simple playground for showing the functionalities of different services....these are not production ready. 
@@ -25,6 +25,7 @@ In all docker-compose files we are exposing our ports to access them from localh
 For our monitoring we are using the docker network and docker service name functionality for scraping metrics.  
 We can access the metrics of our kafka-consumer (written in Java) by using the http:localhost:8380/actuator/metrics endpoint for example.
 
+For initial usage please create a local network via `docker network create playground-network`. This local network will be used for service name discovery. 
 
 Services and Endpoints:
 
@@ -65,12 +66,23 @@ Services and Endpoints:
  - Prometheus  
    After starting Prometheus will be available under: http://localhost:9090
 
+ - Prometheus AlertManager
+   After starting Prometheus AlertManager will be available under http://localhost:9093
+
  - Grafana  
    After starting Grafana will be available under: http://localhost:3000
 
 
 ---
 
+## Basic Alerting
+
+As you can see we have set up the Prometheus AlertManager within our Monitoring Tools. There you can find a simple configuration for using WebHooks as alerting communication way. There is also a basic alerting defined in our Dashboard in Grafana.
+
+As defined above, basic alerting is also not production ready neither recommended to use for that scenario. In this example it just shows the differences between Grafana and Prometheus AlertManager Webhook configurations...in AlertManager you can define more things lie waiting conditions before sending Webhooks. In Grafana a Webhook will be sent immediately, in AlertManager after 30 seconds for example.
+
+
+---
 
 ## TO DO
 

@@ -1,0 +1,13 @@
+global:
+
+route:
+  receiver: "alert_webhook_mattermost"
+  group_by: ['alertname']
+  group_wait:      15s
+  group_interval:  15s
+  repeat_interval: 1m
+
+receivers:
+- name: "alert_webhook_mattermost"
+  slack_configs:
+  - api_url: 'mattermost_url_with_api_token'

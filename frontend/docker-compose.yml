@@ -3,11 +3,14 @@ version: "3.2"
 services:
    
   playapp:
-    image: playapp-frontend
+    image: mrmyiagi/playapp-frontend
     container_name: playapp-frontend
     build:
       context: .
       dockerfile: Dockerfile
+    volumes:
+      - .:/app/
+      - /app/node_modules
     ports:
       - "3100:80"
       - "3145:9145"

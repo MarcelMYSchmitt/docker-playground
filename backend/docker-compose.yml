@@ -3,7 +3,8 @@ version: "3.2"
 services:
 
   kafka-producer:
-    image: kafka-producer
+    image: mrmyiagi/kafka-producer
+    container_name: kafka-producer
     build:
         context: kafka-producer
         dockerfile: Dockerfile
@@ -15,7 +16,8 @@ services:
       - kafka.bootstrap-servers=kafka:9092
 
   kafka-consumer:
-    image: kafka-consumer
+    image: mrmyiagi/kafka-consumer
+    container_name: kafka-consumer
     build:
         context: kafka-consumer
         dockerfile: Dockerfile

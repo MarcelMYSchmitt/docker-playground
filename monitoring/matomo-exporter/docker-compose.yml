@@ -3,11 +3,11 @@ version: "3.2"
 services:
 
   matomo-exporter:
-    image: matomo-exporter
+    image: mrmyiagi/matomo-exporter
+    container_name: matomo-exporter
     build:
         context: .
         dockerfile: Dockerfile
-    container_name: matomo-exporter
     restart: always
     ports:
       - 8180:8080

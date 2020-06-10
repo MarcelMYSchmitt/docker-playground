@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   prometheus:
-    image: playground-prometheus
+    image: mrmyiagi/playground-prometheus
     container_name: monitoring-prometheus
     build:
       context: Prometheus
@@ -10,9 +10,21 @@ services:
     ports:
       - "9090:9090"
     restart: unless-stopped
+    depends_on: 
+      - alertmanager
+
+  alertmanager:
+    image: prom/alertmanager
+    container_name: monitoring-alertmanager
+    volumes:
+      - ./Prometheus-Alertmanager/data:/data
+      - ./Prometheus-Alertmanager/config/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+    ports:
+      - 9093:9093
+    restart: unless-stopped
 
   grafana:
-    image: playground-grafana
+    image: mrmyiagi/playground-grafana
     container_name: monitoring-grafana
     build:
       context: Grafana
