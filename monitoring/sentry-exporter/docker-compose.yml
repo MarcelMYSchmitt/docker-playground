@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  sentry-monitoring:
+    image: mrmyiagi/sentry-monitoring
+    build:
+      context: .
+    environment:
+      SENTRY_BASE_URL: replace_url
+      SENTRY_PROJECTS: replace_with_list_of_strings
+      SENTRY_TOKEN: replace_token
+    ports:
+      - "3002:80"
+    volumes:
+      - ./src:/var/www/html
+    
+networks:
+  default:
+    external:
+      name: playground-network
