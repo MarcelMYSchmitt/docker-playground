@@ -1,0 +1,50 @@
+version: "3.2"
+
+services:
+  redis:
+    image: redis:${REDIS_TAG}
+
+  postgres:
+    image: postgres:${POSTGRES_TAG}
+    environment:
+    - POSTGRES_USER:sentry
+    - POSTGRES_PASSWORD:sentry
+    volumes:
+     - ./data:/var/lib/postgresql/data:rw
+
+  sentry:
+    image: sentry:${SENTRY_TAG}
+    depends_on:
+    - redis
+    - postgres
+    environment:
+    - SENTRY_REDIS_HOST=redis
+    - SENTRY_SECRET_KEY=${SENTRY_SECRET_KEY}
+    - SENTRY_POSTGRES_HOST=postgres
+    ports:
+    - 9000:9000
+
+  sentry_cron:
+    image: sentry:${SENTRY_TAG}
+    depends_on:
+    - sentry
+    environment:
+    - SENTRY_REDIS_HOST=redis
+    - SENTRY_SECRET_KEY=${SENTRY_SECRET_KEY}
+    - SENTRY_POSTGRES_HOST=postgres
+    command: "sentry run cron"
+
+  sentry_worker:
+    image: sentry:${SENTRY_TAG}
+    depends_on:
+    - sentry
+    environment:
+    - SENTRY_REDIS_HOST=redis
+    - SENTRY_SECRET_KEY=${SENTRY_SECRET_KEY}
+    - SENTRY_POSTGRES_HOST=postgres
+    command: "sentry run worker"
+
+networks:
+  default:
+    external:
+      name: senry-network
