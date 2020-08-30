@@ -20,6 +20,9 @@ import { tap } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
 import { WebsocketsComponent } from './websockets/websockets.component';
 import { BackendComponent } from './backend/backend.component';
+import { SentryErrorHandler } from './sentry/sentry.error.service';
+import { SentryComponent } from './sentry/sentry.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { BackendComponent } from './backend/backend.component';
     LandingpageComponent,
     ElkComponent,
     WebsocketsComponent,
-    BackendComponent
+    BackendComponent,
+    SentryComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,9 @@ import { BackendComponent } from './backend/backend.component';
     },
     {
       provide: ErrorHandler,
-      useClass: ApmErrorHandler
+      //useClass: ApmErrorHandler
+      useClass: SentryErrorHandler
+
     }],
   bootstrap: [AppComponent]
 })

@@ -9,8 +9,8 @@ services:
     environment:
     - POSTGRES_USER:sentry
     - POSTGRES_PASSWORD:sentry
-    volumes:
-     - ./data:/var/lib/postgresql/data:rw
+#    volumes:
+#     - ./data:/var/lib/postgresql/data:rw
 
   sentry:
     image: sentry:${SENTRY_TAG}

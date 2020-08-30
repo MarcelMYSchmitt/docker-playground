@@ -21,8 +21,13 @@ For Setup in Docker you can find everything here. For Kubernetes, please use the
    ```
    docker-compose up -d postgres
    docker-compose up -d redis
-   docker-compose run sentry sentry upgrade 
+   docker-compose run sentry upgrade 
    ```
+   
+   You have to create the root user manually.
+
+3. Run `docker-compose up`
+
 
 ## Kubernetes
 

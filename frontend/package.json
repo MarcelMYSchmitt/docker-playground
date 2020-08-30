@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~8.1.0",
     "@angular/router": "~8.1.0",
     "@elastic/apm-rum-angular": "^1.1.0",
+    "@sentry/angular": "^5.22.3",
     "cors": "^2.8.5",
     "net": "^1.0.2",
     "ngx-matomo": "^0.1.4",

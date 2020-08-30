@@ -6,13 +6,16 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { ElkComponent } from './elk/elk.component';
 import { WebsocketsComponent } from './websockets/websockets.component';
 import { BackendComponent } from './backend/backend.component';
+import { SentryComponent } from './sentry/sentry.component';
 
 const routes: Routes = [
   { path: '', component: LandingpageComponent },
   { path: 'matomo', component: MatomoComponent },
   { path: 'elk', component: ElkComponent },
   { path: 'websockets', component: WebsocketsComponent },
-  { path: 'backend', component: BackendComponent }
+  { path: 'backend', component: BackendComponent },
+  { path: 'sentry', component: SentryComponent }
+
 ]
 
 @NgModule({

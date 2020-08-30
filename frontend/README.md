@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
 
+## Information
+
+In order to handle the different tools for error handling and so on, plase take a look into app.module.ts. There you can find different configratuons for ELK and Sentry. Please comment in and out which tool you want to use. In this implementation no multi handling of these tools is configured.
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
