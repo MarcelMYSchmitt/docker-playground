@@ -36,7 +36,9 @@ scrape_configs:
   - job_name: Playappfrontend
     static_configs:
       - targets: ['playapp:9145']
-
+  - job_name: SentryExporter
+    static_configs:
+      - targets: ['sentry-exporter:3002']
 
 
 ## alerting section 
