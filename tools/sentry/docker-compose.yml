@@ -47,4 +47,4 @@ services:
 networks:
   default:
     external:
-      name: senry-network
+      name: playground-network

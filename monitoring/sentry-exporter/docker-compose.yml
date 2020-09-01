@@ -6,13 +6,9 @@ services:
     build:
       context: .
     environment:
-      SENTRY_BASE_URL: replace_url
-      SENTRY_PROJECTS: replace_with_list_of_strings
-      SENTRY_TOKEN: replace_token
+      SENTRY_BASE_URL: http://sentry:9000
     ports:
-      - "3002:80"
-    volumes:
-      - ./src:/var/www/html
+      - "3002:3002"
     
 networks:
   default:

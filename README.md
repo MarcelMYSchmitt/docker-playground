@@ -3,6 +3,7 @@
 This repository contains: 
  - complete ELK Stack
  - Matomo for User Activity Tracking
+ - Sentry for User Error Tracking
  - Kafka as Message Broker
  - Kafka Producer and Consumer (both in Java)
  - Frontend (Angular) for displaying Kafka data, also for sending data to ELK and Matomo  
@@ -41,6 +42,12 @@ Services and Endpoints:
  - PlayApp Angular App  
    After starting Frontend will be available under: http://localhost:3100
 
+ - Senty
+   After starting Sentry will be available under: http://localhost: 9000
+
+ - Sentry Exporter
+   Aftet starting Sentry will be available under: http://localhost:3002
+ 
  - Kafka  
    After starting Grafana will be available under: http://localhost:3000
 
@@ -79,11 +86,4 @@ Services and Endpoints:
 
 As you can see we have set up the Prometheus AlertManager within our Monitoring Tools. There you can find a simple configuration for using WebHooks as alerting communication way. There is also a basic alerting defined in our Dashboard in Grafana.
 
-As defined above, basic alerting is also not production ready neither recommended to use for that scenario. In this example it just shows the differences between Grafana and Prometheus AlertManager Webhook configurations...in AlertManager you can define more things lie waiting conditions before sending Webhooks. In Grafana a Webhook will be sent immediately, in AlertManager after 30 seconds for example.
-
-
----
-
-## TO DO
-
-Extend Readme and setup.
+As defined above, basic alerting is also not production ready neither recommended to use for that scenario. In this example it just shows the differences between Grafana and Prometheus AlertManager Webhook configurations...in AlertManager you can define more things lie waiting conditions before sending Webhooks. In Grafana a Webhook will be sent immediately, in AlertManager after 30 seconds for example.s
