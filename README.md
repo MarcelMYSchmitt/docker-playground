@@ -78,7 +78,7 @@ Services and Endpoints:
  - Prometheus  
    After starting Prometheus will be available under: http://localhost:9090
 
- - Prometheus AlertManager
+ - Prometheus AlertManager  
    After starting Prometheus AlertManager will be available under http://localhost:9093
 
  - Grafana  
