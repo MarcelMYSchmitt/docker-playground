@@ -8,14 +8,19 @@ This repository contains:
  - Kafka Producer and Consumer (both in Java)
  - Frontend (Angular) for displaying Kafka data, also for sending data to ELK and Matomo  
  - Monitoring tools (Prometheus, Prometheus AlertManager, Grafana)
- - Monitoring Exporter (Kafka, Matomo, ELK)
+ - Monitoring Exporter (Kafka, Matomo, ELK, Sentry)
 
 This repository is just a simple playground for showing the functionalities of different services....these are not production ready. 
 All services are dockerized and can be controlled by different docker compose files. 
 
+Info: In the powerpoint presentation such as the screenshots Sentry is not mentioned. 
+
 ---
 
 ## How to run
+
+EOL Problems: Due to linux / windows conversion problems please make sure you always have the correct otherwiese you could have problems building some services: `Use notepad++, go to edit -> EOL conversion -> change from CRLF to LF.`  
+
 
 All services are using docker-compose files. There are also only Dockerfiles available. You can find a specific compose file in every folder.
 

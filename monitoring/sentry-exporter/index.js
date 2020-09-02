@@ -45,7 +45,6 @@ function CallEndpointAndSetAvailabilityMetric() {
   console.log(`SENTRY_HEALTH_URL: ${SENTRY_HEALTH_URL}`)
   
   try {
-    console.log("entry try");
 
     request(SENTRY_HEALTH_URL, (err, res, body) => {
       if (err) { 

@@ -8,6 +8,9 @@ COPY configuration/plugins /var/lib/grafana/plugins
 
 ADD replaceEnvVariables.sh /replaceEnvVariables.sh
 
+RUN ls /etc/grafana/provisioning/datasources/
+RUN ls /
+
 USER root
 
 RUN chown grafana: /etc/grafana/provisioning/datasources/

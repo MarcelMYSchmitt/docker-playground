@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  sentry-monitoring:
+  sentry-exporter:
     image: mrmyiagi/sentry-monitoring
     build:
       context: .
