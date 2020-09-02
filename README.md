@@ -47,11 +47,11 @@ Services and Endpoints:
  - PlayApp Angular App  
    After starting Frontend will be available under: http://localhost:3100
 
- - Senty
+ - Senty  
    After starting Sentry will be available under: http://localhost: 9000
 
- - Sentry Exporter
-   Aftet starting Sentry will be available under: http://localhost:3002
+ - Sentry Exporter  
+   After starting Sentry will be available under: http://localhost:3002
  
  - Kafka  
    After starting Grafana will be available under: http://localhost:3000
