@@ -11,7 +11,7 @@
   "author": "Grafana Labs",
   "license": "Apache",
   "dependencies": {
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "moment": "^2.22.2",
     "monaco-editor": "^0.13.1",
     "q": "^1.5.0",
