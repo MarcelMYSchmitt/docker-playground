@@ -8,7 +8,6 @@ services:
     build:
         context: kafka-producer
         dockerfile: Dockerfile
-    container_name: kafka-producer
     restart: always
     ports:
       - 8280:8080
@@ -21,7 +20,6 @@ services:
     build:
         context: kafka-consumer
         dockerfile: Dockerfile
-    container_name: kafka-consumer
     restart: always
     ports:
       - 8380:8080
